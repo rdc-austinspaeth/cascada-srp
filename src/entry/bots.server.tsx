@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { SRP } from '../SRP';
 
-export const SSRRender = (data: any, response: any) => {
+export const SSRRender = (data: any, location: string, response: any) => {
   const { pipe } = ReactDOMServer.renderToPipeableStream(
     <html>
       <head>
@@ -12,9 +12,10 @@ export const SSRRender = (data: any, response: any) => {
       </head>
       <body>
         <div id="app">
-          <StaticRouter location={''}>
+          <StaticRouter location={`/${location}`}>
             <Routes>
-              <Route path={'/*'} element={<SRP ssrData={data} />} />
+              <Route path={'/:slug'} element={<SRP ssrData={data} />} />
+              <Route path={'/'} element={<code>404</code>} />
             </Routes>
           </StaticRouter>
         </div>

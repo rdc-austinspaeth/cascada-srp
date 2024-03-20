@@ -14,7 +14,8 @@ ReactDOM.hydrateRoot(
   document.getElementById('app')!,
   <BrowserRouter>
     <Routes>
-      <Route path={'/*'} element={<SRP ssrData={data} />} />
+      <Route path={'/:slug'} element={<SRP ssrData={data} />} />
+      <Route path={'/'} element={<code>404</code>} />
     </Routes>
   </BrowserRouter>,
 );

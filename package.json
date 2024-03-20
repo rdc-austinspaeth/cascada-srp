@@ -4,16 +4,19 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "bots:prod": "npm run bots:prepare && node ./server/ssr.js",
-    "bots:dev": "node ./server/ssr-dev.js",
-    "users:prod": "npm run users:prepare && node ./server/static",
-    "users:dev": "vite",
+    "bots:serve": "npm run bots:prepare && node ./server/ssr.js",
+    "users:serve": "npm run users:prepare && node ./server/static",
+
+    "users:export": "npm run users:prepare",
+
+    "bots:dev": "npm run bots:prepare && node ./server/ssr-dev.js",
+    "users:dev": "node ./server/ssg-dev.js",
 
     "bots:prepare": "vite build --outDir ./dist/client && npm run ssr:build && npm run data:prepare",
-    "data:prepare": "vite build --ssr ./src/data --outDir ./dist/data",
     "ssr:build": "vite build --ssr ./src/entry/bots.server --outDir ./dist/server",
     "users:prepare": "vite build --outDir ./dist/client && npm run ssg:build && node ./server/ssg",
-    "ssg:build": "vite build --ssr ./src/entry/users.server --outDir ./dist/server"
+    "ssg:build": "vite build --ssr ./src/entry/users.server --outDir ./dist/server",
+    "data:prepare": "vite build --ssr ./src/data --outDir ./dist/data"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -27,12 +30,13 @@
     "@typescript-eslint/parser": "^7.1.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "compression": "^1.7.4",
-    "serve-static": "^1.15.0",
-    "eslint": "^8.57.0",
     "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "express": "^4.18.3",
+    "nodemon": "^3.1.0",
+    "serve-static": "^1.15.0",
     "typescript": "^5.2.2",
     "vite": "^5.1.6"
   }

@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { SRP } from '../SRP';
 
-export function SSRRender(url: string | Partial<Location>) {
+export function SSRRender() {
   return ReactDOMServer.renderToString(
     <html>
       <head>
@@ -12,9 +12,9 @@ export function SSRRender(url: string | Partial<Location>) {
       </head>
       <body>
         <div id='app'>
-          <StaticRouter location={url}>
+          <StaticRouter location='/ssg-slug'>
             <Routes>
-              <Route path={'/*'} element={<SRP ssrData={null} />} />
+              <Route path={'/:slug'} element={<SRP ssrData={null} />} />
             </Routes>
           </StaticRouter>
         </div>

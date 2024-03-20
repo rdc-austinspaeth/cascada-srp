@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useLocation } from 'react-router-dom';
 
 import SuspenseTest from './components/SuspensefulTest';
 
@@ -7,6 +8,8 @@ const Test = React.lazy(() => import('./components/Test'));
 export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
   const { ssrData } = props || {};
   const { origin } = ssrData || {};
+
+  const location = useLocation();
 
   const [ip, setIp] = React.useState<string | null>(origin || null);
 
@@ -25,6 +28,7 @@ export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
         ? (
           <React.Suspense fallback={<SuspenseTest />}>
             <Test ip={ip} />
+            {location.pathname}
           </React.Suspense>
         )
         : <SuspenseTest />
