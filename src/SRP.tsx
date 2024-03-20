@@ -4,22 +4,27 @@ import SuspenseTest from './components/SuspensefulTest';
 
 const Test = React.lazy(() => import('./components/Test'));
 
-export const SRP: React.FunctionComponent = () => {
-  const [loaded, setLoaded] = React.useState(false);
+export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
+  const { ssrData } = props || {};
+  const { origin } = ssrData || {};
+
+  const [ip, setIp] = React.useState<string | null>(origin || null);
 
   React.useEffect(() => {
-    setTimeout(() => {
-      setLoaded(true);
-    }, 2000);
+    if (!origin) {
+      setTimeout(() => {
+        setIp('123.456.789.123');
+      }, 1500);
+    }
   }, []);
 
   return (
     <>
       <h1>SRP</h1>
-      {loaded
+      {ip
         ? (
           <React.Suspense fallback={<SuspenseTest />}>
-            <Test />
+            <Test ip={ip} />
           </React.Suspense>
         )
         : <SuspenseTest />
