@@ -11,7 +11,7 @@ export const SSRRender = (data: any, response: any) => {
         <meta charSet="utf-8" />
       </head>
       <body>
-        <div id="root">
+        <div id="app">
           <StaticRouter location={''}>
             <Routes>
               <Route path={'/*'} element={<SRP ssrData={data} />} />
@@ -23,7 +23,6 @@ export const SSRRender = (data: any, response: any) => {
     {
       onShellReady() {
         response.setHeader('content-type', 'text/html');
-        console.log(pipe);
         pipe(response);
       }
     }

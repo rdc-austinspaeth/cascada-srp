@@ -6,10 +6,19 @@ import { SRP } from '../SRP';
 
 export function SSRRender(url: string | Partial<Location>) {
   return ReactDOMServer.renderToString(
-    <StaticRouter location={url}>
-      <Routes>
-        <Route path={'/*'} element={<SRP ssrData={null} />} />
-      </Routes>
-    </StaticRouter>,
+    <html>
+      <head>
+        <meta charSet="utf-8" />
+      </head>
+      <body>
+        <div id='app'>
+          <StaticRouter location={url}>
+            <Routes>
+              <Route path={'/*'} element={<SRP ssrData={null} />} />
+            </Routes>
+          </StaticRouter>
+        </div>
+      </body>
+    </html>,
   );
 }
