@@ -4,11 +4,14 @@ import { Route, Routes } from 'react-router-dom';
 
 import { SRP } from '../SRP';
 
-export const SSRRender = (data: any, location: string, response: any) => {
+export const SSRRender = (data: any, location: string, response: any, cssAssets: any) => {
   const { pipe } = ReactDOMServer.renderToPipeableStream(
     <html>
       <head>
         <meta charSet="utf-8" />
+        {cssAssets.map((asset: any) => (
+          <link key={asset} rel="stylesheet" href={asset} />
+        ))}
       </head>
       <body>
         <div id="app">
@@ -25,7 +28,7 @@ export const SSRRender = (data: any, location: string, response: any) => {
       onShellReady() {
         response.setHeader('content-type', 'text/html');
         pipe(response);
-      }
+      },
     }
   );
 }
