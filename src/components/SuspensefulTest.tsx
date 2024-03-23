@@ -1,5 +1,7 @@
+import { suspenseContainer } from "./SuspenseContainer.css";
+
 export const SuspenseTest = () => {
-  return <div style={{ color: '#ccc' }}>Loading</div>
+  return <div className={suspenseContainer}>Loading</div>
 }
 
 export default SuspenseTest;

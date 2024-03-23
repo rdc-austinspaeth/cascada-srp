@@ -9,8 +9,8 @@ app.use('*', async (req, res) => {
   const location = req?.baseUrl?.split('/')[req?.baseUrl?.split('/')?.length - 1] || '';
 
   try {
-    const { SSRRender } = await import('../dist/server/bots.server.js');
-    const { getTestData } = await import('../dist/data/data.js');
+    const { SSRRender } = await import('../dist/server/assets/index.js');
+    const { getTestData } = await import('../dist/data/assets/index.js');
 
     const cssAssets = fs.readdirSync("./dist/client/assets").filter((asset => asset.endsWith('.css'))).map((asset) => `/assets/${asset}`);
     const data = await getTestData();

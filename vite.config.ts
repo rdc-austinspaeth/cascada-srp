@@ -8,4 +8,11 @@ export default defineConfig({
   server: {
     port: 8888,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: `assets/index.js`,
+      },
+    },
+  }
 });

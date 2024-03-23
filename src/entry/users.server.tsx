@@ -4,11 +4,15 @@ import { Route, Routes } from 'react-router-dom';
 
 import { SRP } from '../SRP';
 
-export function SSRRender() {
+export function SSRRender(cssAssets: any) {
   return ReactDOMServer.renderToString(
     <html>
       <head>
         <meta charSet="utf-8" />
+        <script type="module" src="/assets/index.js" />
+        {cssAssets.map((asset: any) => (
+          <link key={asset} rel="stylesheet" href={asset} />
+        ))}
       </head>
       <body>
         <div id='app'>
