@@ -35,3 +35,26 @@ export const filterBarContainer = style({
   display: 'flex',
   alignItems: 'center',
 });
+
+export const metaContainer = style({
+  width: '100%',
+  boxSizing: 'border-box',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+  alignItems: 'flex-start',
+  padding: '0px 16px',
+  paddingTop: 17,
+});
+
+export const propertiesContainer = style({
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  alignItems: 'flex-start',
+  justifyContent: 'flex-start',
+  gap: 8,
+  padding: '0px 16px',
+  marginTop: 4,
+});

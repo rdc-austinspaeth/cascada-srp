@@ -8,6 +8,6 @@ app.get('*', (req, res) => {
   res.sendFile('index.html', { root: 'dist/client' });
 });
 
-app.listen(8888, () => {
-  console.log('STATIC SERVE => http://localhost:8888 🚀 🌔');
+app.listen(8000, () => {
+  console.log('STATIC SERVE => http://localhost:8000 🚀 🌔');
 });

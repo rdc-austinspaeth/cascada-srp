@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node ./server/createDevIndex.js && vite dev",
+    "dev": "node ./server/createDevIndex.js && vite dev --host",
     "bots:serve": "node ./server/createProdIndex.js && npm run bots:prepare && node ./server/ssr.js",
     "users:serve": "node ./server/createProdIndex.js && npm run users:prepare && node ./server/static",
     "users:export": "npm run users:prepare",

@@ -21,6 +21,6 @@ app.use('*', async (req, res) => {
   }
 });
 
-app.listen(8888, () => {
-  console.log('SSR SERVE => http://localhost:8888 🚀 🌔');
+app.listen(8000, () => {
+  console.log('SSR SERVE => http://localhost:8000 🚀 🌔');
 });
