@@ -7,6 +7,7 @@ import { BannerAd } from './components/BannerAd';
 import { NavigationBar } from './components/NavigationBar';
 import Meta from './components/Meta';
 import { setLoadStatus } from './redux/actions';
+import { fetchProperties } from './redux/thunks/fetchProperties';
 import store from './redux/store';
 import { FilterBar } from './components/FilterBar';
 import { Properties } from './components/Properties';
@@ -19,6 +20,28 @@ export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
       store.dispatch(setLoadStatus(true));
     }, 500);
   }, []);
+
+  React.useEffect(()=>{
+    const variables = {
+      geoSupportedSlug: '',
+      query: {
+        primary: true,
+        status: ['for_sale', 'ready_to_build'],
+        search_location: {
+          location: 'South Carolina',
+        },
+      },
+      client_data: {
+        device_data: {
+          device_type: 'desktop',
+        },
+      },
+      limit: 42,
+      offset: 0,
+      sort_type: 'relevant',
+    };
+    store.dispatch(fetchProperties(variables));
+  },[])
 
   return (
     <Provider store={store}>

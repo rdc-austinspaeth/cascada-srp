@@ -1,8 +1,8 @@
-import { SET_LOAD_STATUS } from "../../constants/redux";
+import { actionTypes } from "../../constants/redux";
 
 export const loadStatus = (state = false, action: any) => {
   switch(action.type) {
-    case SET_LOAD_STATUS:
+    case actionTypes.SET_LOAD_STATUS:
       return action.loadStatus;
     default:
       return state;
