@@ -8,8 +8,10 @@ export const Properties: React.FunctionComponent = () => {
   const loadStatus = useSelector(loadStatusSelector, shallowEqual);
 
   return (
-    <div>
-      <PropertyCard condition={true} />
-    </div>
+    <React.Fragment>
+      <PropertyCard condition={loadStatus} />
+      <PropertyCard condition={loadStatus} />
+      <PropertyCard condition={loadStatus} />
+    </React.Fragment>
   )
 }
