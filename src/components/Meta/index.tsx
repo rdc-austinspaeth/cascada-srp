@@ -12,7 +12,7 @@ export const LazyMeta: React.FunctionComponent = () => {
   const loadStatus = useSelector(loadStatusSelector, shallowEqual);
 
   return (
-    <Suspense fallback={<MetaSuspense />} component={<LazyComponent />} condition={loadStatus} />
+    <Suspense fallback={<MetaSuspense />} component={<LazyComponent />} condition={loadStatus?.properties} />
   )
 }
 

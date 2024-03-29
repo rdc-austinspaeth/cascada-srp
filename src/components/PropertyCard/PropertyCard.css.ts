@@ -6,7 +6,23 @@ export const propertyCardContainer = style({
   flexDirection: 'column',
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
-  flex: 1,
+  marginBottom: 8,
+  width: 'calc(20% - 6px)',
+
+  '@media': {
+    '(max-width: 1800px)': {
+      width: 'calc(25% - 6px)',
+    },
+    '(max-width: 1500px)': {
+      width: 'calc(33% - 6px)',
+    },
+    '(max-width: 1150px)': {
+      width: 'calc(50% - 4px)',
+    },
+    '(max-width: 800px)': {
+      width: 'calc(100%)',
+    },
+  },
 });
 
 export const cardContainer = style({
@@ -105,6 +121,7 @@ export const homeFacts = style({
   alignItems: 'center',
   fontSize: 16,
   marginTop: 4,
+  width: 'calc(100% + 145px)',
 });
 
 export const strongFact = style({
@@ -146,7 +163,23 @@ export const propertyCardSuspense = style({
   flexDirection: 'column',
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
-  flex: 1,
+  marginBottom: 8,
+  width: 'calc(20% - 6px)',
+
+  '@media': {
+    '(max-width: 1800px)': {
+      width: 'calc(25% - 6px)',
+    },
+    '(max-width: 1500px)': {
+      width: 'calc(33% - 6px)',
+    },
+    '(max-width: 1150px)': {
+      width: 'calc(50% - 4px)',
+    },
+    '(max-width: 800px)': {
+      width: 'calc(100%)',
+    },
+  },
 });
 
 export const cardContainerSuspense = style({

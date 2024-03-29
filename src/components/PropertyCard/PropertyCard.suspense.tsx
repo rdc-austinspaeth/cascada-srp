@@ -1,4 +1,4 @@
-import { addressLineSuspense, cardContainer, cardContainerSuspense, cardContentContainer, ctaButtonSuspense, factSuspense, homeFacts, imageContainerSuspense, labelSuspense, leftContent, locationLineSuspense, priceSuspense, propertyCardSuspense, rightContent, status, statusDotSuspense, statusSuspense } from "./PropertyCard.css";
+import { addressLineSuspense, cardContainerSuspense, cardContentContainer, ctaButtonSuspense, factSuspense, homeFacts, imageContainerSuspense, labelSuspense, leftContent, locationLineSuspense, priceSuspense, propertyCardSuspense, rightContent, status, statusDotSuspense, statusSuspense } from "./PropertyCard.css";
 import { PropertyCardProps } from "./PropertyCard.types";
 
 export const PropertyCardSuspense: React.FunctionComponent<PropertyCardProps> = (props) => {

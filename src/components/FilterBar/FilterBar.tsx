@@ -14,14 +14,14 @@ export const FilterBar: React.FunctionComponent = () => {
   return (
     <div className={filterBar}>
       <div className={leftContent}>
-        <Search condition={loadStatus} />
-        <LazyFilter condition={loadStatus} label='Price' width={94.15} />
-        <LazyFilter condition={loadStatus} label='Property type' width={162.32} />
-        <LazyFilter condition={loadStatus} label='More' width={93.77} />
-        <LazyFilter button={true} condition={loadStatus} label='Save search' width={142.24} />
+        <Search condition={loadStatus?.properties} />
+        <LazyFilter condition={loadStatus?.properties} label='Price' width={94.15} />
+        <LazyFilter condition={loadStatus?.properties} label='Property type' width={162.32} />
+        <LazyFilter condition={loadStatus?.properties} label='More' width={93.77} />
+        <LazyFilter button={true} condition={loadStatus?.properties} label='Save search' width={142.24} />
       </div>
       <div className={rightContent}>
-        <Toggle condition={loadStatus} />
+        <Toggle condition={loadStatus?.properties} />
       </div>
     </div>
   )

@@ -7,7 +7,7 @@ import { BannerAd } from './components/BannerAd';
 import { NavigationBar } from './components/NavigationBar';
 import Meta from './components/Meta';
 import { setLoadStatus } from './redux/actions';
-import { fetchProperties } from './redux/thunks/fetchProperties';
+import { getProperties } from './redux/actions';
 import store from './redux/store';
 import { FilterBar } from './components/FilterBar';
 import { Properties } from './components/Properties';
@@ -40,8 +40,8 @@ export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
       offset: 0,
       sort_type: 'relevant',
     };
-    store.dispatch(fetchProperties(variables));
-  },[])
+    store.dispatch(getProperties(variables));
+  },[]);
 
   return (
     <Provider store={store}>
