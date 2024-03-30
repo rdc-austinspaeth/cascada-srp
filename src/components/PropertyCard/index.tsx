@@ -12,9 +12,7 @@ export const LazyPropertyCard: React.FunctionComponent<PropertyCardProps> = (pro
 
   return (
     <Suspense key={key} fallback={<PropertyCardSuspense {...props} />} component={<LazyComponent {...props } />} condition={condition} />
-  )
-  
-
+  );
 }
 
 export default LazyPropertyCard;

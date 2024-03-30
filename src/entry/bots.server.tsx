@@ -9,6 +9,7 @@ export const SSRRender = (data: any, location: string, response: any, cssAssets:
     <html>
       <head>
         <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {cssAssets.map((asset: any) => (
           <link key={asset} rel="stylesheet" href={asset} />
         ))}

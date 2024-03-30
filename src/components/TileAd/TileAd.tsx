@@ -17,3 +17,5 @@ export const TileAd: React.FunctionComponent<TileAdProps> = (props) => {
     </div>
   )
 }
+
+export default TileAd;

@@ -6,8 +6,10 @@ import { Logo } from "../Logo";
 import NavigationLink from "../NavigationLink";
 import SignUpButton from "../SignUpButton";
 import { loadStatusSelector } from "../../redux/selectors";
+import HeaderLinks from '../HeaderLinks';
 
 import { leftContent, navContainer, navigationBar, rightContent } from "./NavigationBar.css";
+
 
 export const NavigationBar: React.FunctionComponent = () => {
   const loadStatus = useSelector(loadStatusSelector, shallowEqual);
@@ -30,6 +32,7 @@ export const NavigationBar: React.FunctionComponent = () => {
         </nav>
       </div>
       <div className={rightContent}>
+        <HeaderLinks condition={loadStatus?.properties} />
         <Login condition={loadStatus?.properties} />
         <SignUpButton condition={loadStatus?.properties} />
       </div>

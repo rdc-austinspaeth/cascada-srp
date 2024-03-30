@@ -3,14 +3,14 @@ import { shallowEqual, useSelector } from "react-redux";
 
 import { loadStatusSelector, propertiesSelector } from '../../redux/selectors';
 import PropertyCard from '../PropertyCard';
-import { TileAd } from '../TileAd';
+import TileAd from '../TileAd';
 import { InlineAd } from '../InlineAd';
 
 export const Properties: React.FunctionComponent = () => {
   const loadStatus = useSelector(loadStatusSelector, shallowEqual);
   const properties = useSelector(propertiesSelector, shallowEqual);
 
-  const initialArray = new Array(42).fill(null);
+  let initialArray = new Array(42).fill(null);
   let copiedProperties = [...properties];
 
   const ads = [
@@ -85,7 +85,9 @@ export const Properties: React.FunctionComponent = () => {
     },
   ]
 
-  const propertiesWithAds = ads.forEach((ad: any) => copiedProperties.splice(ad.index, 0, ad));
+  ads.forEach((ad: any) => copiedProperties.splice(ad.index, 0, ad));
+
+  ads.forEach((ad: any) => initialArray.splice(ad.index, 0, ad));
 
   const renderedProperties = loadStatus?.properties
     ? copiedProperties
@@ -95,8 +97,8 @@ export const Properties: React.FunctionComponent = () => {
     <React.Fragment>
       {renderedProperties.map((property: any, index: number) => (
         property?.isAd
-          ? property.adType === 'inline' ? <InlineAd { ...property } /> : <TileAd {...property } />
-          : <PropertyCard key={property?.id || `property_${index}`} property={property} condition={loadStatus?.properties} />
+          ? property.adType === 'inline' ? <InlineAd  key={property?.id} { ...property } /> : <TileAd key={property?.id} condition={loadStatus?.properties} {...property } />
+          : <PropertyCard key={property?.id || `property_${index}`} index={index} property={property} condition={loadStatus?.properties} />
       ))}
     </React.Fragment>
   )

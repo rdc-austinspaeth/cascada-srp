@@ -7,16 +7,16 @@ export const propertyCardContainer = style({
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
   marginBottom: 8,
-  width: 'calc(20% - 6px)',
+  width: 'calc(25% - 6px)',
 
   '@media': {
-    '(max-width: 1800px)': {
+    '(max-width: 1700px)': {
       width: 'calc(25% - 6px)',
     },
-    '(max-width: 1500px)': {
-      width: 'calc(33% - 6px)',
+    '(max-width: 1400px)': {
+      width: 'calc(33% - 2px)',
     },
-    '(max-width: 1150px)': {
+    '(max-width: 1100px)': {
       width: 'calc(50% - 4px)',
     },
     '(max-width: 800px)': {
@@ -164,22 +164,22 @@ export const propertyCardSuspense = style({
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
   marginBottom: 8,
-  width: 'calc(20% - 6px)',
+  width: 'calc(25% - 6px)',
 
   '@media': {
-    '(max-width: 1800px)': {
+    '(max-width: 1700px)': {
       width: 'calc(25% - 6px)',
     },
-    '(max-width: 1500px)': {
-      width: 'calc(33% - 6px)',
+    '(max-width: 1400px)': {
+      width: 'calc(33% - 2px)',
     },
-    '(max-width: 1150px)': {
+    '(max-width: 1100px)': {
       width: 'calc(50% - 4px)',
     },
     '(max-width: 800px)': {
       width: 'calc(100%)',
     },
-  },
+  }
 });
 
 export const cardContainerSuspense = style({

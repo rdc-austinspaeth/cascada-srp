@@ -1,7 +1,8 @@
-import { addressLineSuspense, cardContainerSuspense, cardContentContainer, ctaButtonSuspense, factSuspense, homeFacts, imageContainerSuspense, labelSuspense, leftContent, locationLineSuspense, priceSuspense, propertyCardSuspense, rightContent, status, statusDotSuspense, statusSuspense } from "./PropertyCard.css";
-import { PropertyCardProps } from "./PropertyCard.types";
+import { addressLineSuspense, cardContainerSuspense, cardContentContainer, ctaButtonSuspense, factSuspense, homeFacts, imageContainerSuspense, labelSuspense, leftContent, locationLineSuspense, priceSuspense, propertyCardSuspense, rightContent, status, statusDotSuspense, statusSuspense } from "../PropertyCard/PropertyCard.css";
 
-export const PropertyCardSuspense: React.FunctionComponent<PropertyCardProps> = () => {
+import { TileAdProps } from "./TileAd.types";
+
+export const TileAdSuspense: React.FunctionComponent<TileAdProps> = () => {
   return (
     <div className={propertyCardSuspense}>
       <div className={labelSuspense} />
@@ -32,4 +33,4 @@ export const PropertyCardSuspense: React.FunctionComponent<PropertyCardProps> = 
   )
 }
 
-export default PropertyCardSuspense;
+export default TileAdSuspense;
