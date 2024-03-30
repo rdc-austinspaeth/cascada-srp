@@ -41,6 +41,7 @@
     "nodemon": "^3.1.0",
     "serve-static": "^1.15.0",
     "typescript": "^5.2.2",
-    "vite": "^5.1.6"
+    "vite": "^5.1.6",
+    "vite-plugin-compression2": "^1.0.0"
   }
 }

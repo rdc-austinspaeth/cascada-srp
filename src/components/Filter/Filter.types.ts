@@ -3,4 +3,6 @@ export interface FilterProps {
   label?: string,
   width: number,
   button?: boolean,
+  hideMobile?: boolean,
+  hideTablet?: boolean,
 }

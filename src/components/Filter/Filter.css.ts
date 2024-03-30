@@ -54,3 +54,19 @@ export const filterTextSuspense = style({
   borderRadius: 3,
   backgroundColor: '#ccc',
 });
+
+export const conditionalTabletHide = style({
+  '@media': {
+    '(max-width: 1280px)': {
+      display: 'none',
+    }
+  }
+});
+
+export const conditionalMobileHide = style({
+  '@media': {
+    '(max-width: 995px)': {
+      display: 'none',
+    }
+  }
+});

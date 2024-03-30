@@ -1,7 +1,7 @@
 import React from "react";
 
 import { PageLayoutProps } from "./PageLayout.types";
-import { bannerAdContainer, filterBarContainer, metaContainer, navBarContainer, pageLayoutContainer, propertiesContainer } from "./PageLayout.css";
+import { bannerAdContainer, filterBarContainer, metaContainer, navBarContainer, pageLayoutContainer, propertiesContainer, filterBarStickyBorder } from "./PageLayout.css";
 
 export const PageLayout: React.FunctionComponent<PageLayoutProps> = (props) => {
   const { BannerAd, NavigationBar, FilterBar, Meta, Properties } = props || {};
@@ -14,6 +14,7 @@ export const PageLayout: React.FunctionComponent<PageLayoutProps> = (props) => {
       <div className={navBarContainer}>
         { <NavigationBar /> }
       </div>
+      <div className={filterBarStickyBorder} />
       <div className={filterBarContainer}>
         { <FilterBar /> }
       </div>

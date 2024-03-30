@@ -13,4 +13,11 @@ export const inlineAdContainer = style({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+
+  '@media': {
+    '(max-width: 768px)': {
+      display: 'none',
+      height: 0,
+    },
+  }
 });

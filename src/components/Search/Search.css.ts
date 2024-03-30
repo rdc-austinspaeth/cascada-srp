@@ -9,6 +9,13 @@ export const searchContainer = style({
   justifyContent: 'space-between',
   alignItems: 'center',
   position: 'relative',
+
+  '@media': {
+    '(max-width: 768px)': {
+      flex: 1,
+      marginRight: 8,
+    },
+  },
 });
 
 export const searchContainerSuspense = style({
@@ -20,6 +27,13 @@ export const searchContainerSuspense = style({
   justifyContent: 'space-between',
   alignItems: 'center',
   position: 'relative',
+  
+  '@media': {
+    '(max-width: 768px)': {
+      flex: 1,
+      marginRight: 8,
+    },
+  },
 });
 
 export const searchInput = style({

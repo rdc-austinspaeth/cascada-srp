@@ -7,6 +7,12 @@ export const headerLinksContainer = style({
   alignItems: 'center',
   gap: 28,
   flexWrap: 'nowrap',
+  
+  '@media': {
+    '(max-width: 1280px)': {
+      display: 'none',
+    }
+  },
 });
 
 export const headerLink = style({
@@ -25,6 +31,12 @@ export const headerLinksContainerSuspense = style({
   alignItems: 'center',
   gap: 28,
   flexWrap: 'nowrap',
+
+  '@media': {
+    '(max-width: 1280px)': {
+      display: 'none',
+    }
+  },
 });
 
 export const headerLinkSuspense = style({

@@ -8,6 +8,13 @@ export const pageTitle = style({
   lineHeight: '32px',
   fontWeight: 700,
   color: '#2b2b2b',
+
+  '@media': {
+    '(max-width: 768px)': {
+      fontSize: 18,
+      lineHeight: '24px',
+    },
+  },
 });
 
 export const secondaryContainer = style({
@@ -17,6 +24,13 @@ export const secondaryContainer = style({
   padding: '12px 0px',
   height: 20,
   boxSizing: 'content-box',
+
+  '@media': {
+    '(max-width: 768px)': {
+      width: '100%',
+      justifyContent: 'space-between',
+    },
+  },
 });
 
 export const homeCount = style({
@@ -56,6 +70,15 @@ export const pageTitleSuspense = style({
   margin: '4px 0px',
   backgroundColor: '#ccc',
   borderRadius: 4,
+
+  '@media': {
+    '(max-width: 768px)': {
+      height: 18,
+      margin: '6px 0px',
+      marginBottom: 2,
+      width: 350,
+    },
+  },
 });
 
 export const HomeCountSuspense = style({

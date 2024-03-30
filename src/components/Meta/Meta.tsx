@@ -5,10 +5,10 @@ import { chevronIcon, heavy, homeCount, pageTitle, secondaryContainer, sort } fr
 export const Meta: React.FunctionComponent = () => {
   return (
     <React.Fragment>
-      <h1 className={pageTitle}>San Francisco, CA real estate & homes for sale</h1>
+      <h1 className={pageTitle}>South Carolina real estate & homes for sale</h1>
       <div className={secondaryContainer}>
         <div className={homeCount}>
-          1,621 Homes
+          45,229 Homes
         </div>
         <div className={sort}>
           Sort by <span className={heavy}>Relevant listings</span>

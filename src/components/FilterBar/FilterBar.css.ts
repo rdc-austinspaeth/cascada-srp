@@ -13,6 +13,12 @@ export const leftContent = style({
   display: 'flex',
   justifyContent: 'flex-start',
   alignItems: 'center',
+
+  '@media': {
+    '(max-width: 768px)': {
+      display: 'none',
+    },
+  },
 });
 
 export const rightContent = style({
@@ -20,4 +26,21 @@ export const rightContent = style({
   justifyContent: 'flex-end',
   alignItems: 'center',
   height: '100%',
+
+  '@media': {
+    '(max-width: 768px)': {
+      display: 'none',
+    },
+  },
+});
+
+export const mobileContent = style({
+  display: 'none',
+  width: '100%',
+
+  '@media': {
+    '(max-width: 768px)': {
+      display: 'flex',
+    },
+  },
 });

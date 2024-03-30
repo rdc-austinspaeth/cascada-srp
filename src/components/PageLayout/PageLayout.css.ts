@@ -14,6 +14,12 @@ export const bannerAdContainer = style({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+
+  '@media': {
+    '(max-width: 768px)': {
+      height: 0,
+    },
+  },
 });
 
 export const navBarContainer = style({
@@ -25,6 +31,18 @@ export const navBarContainer = style({
   justifyContent: 'flex-start',
   alignItems: 'center',
   borderBottom: '1px solid #cacaca',
+  zIndex: 2,
+});
+
+export const filterBarStickyBorder = style({
+  width: '100%',
+  height: 1,
+  top: 79,
+  position: 'sticky',
+  background: '#cacaca',
+  marginTop: 1,
+  marginBottom: -1,
+  zIndex: 0,
 });
 
 export const filterBarContainer = style({
@@ -34,6 +52,17 @@ export const filterBarContainer = style({
   boxSizing: 'border-box',
   display: 'flex',
   alignItems: 'center',
+  zIndex: 2,
+  top: 0,
+  marginTop: -1,
+  position: 'sticky',
+  backgroundColor: '#fff',
+
+  '@media': {
+    '(max-width: 768px)': {
+      backgroundColor: '#f7f7f7',
+    },
+  },
 });
 
 export const metaContainer = style({

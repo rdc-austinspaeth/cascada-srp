@@ -10,6 +10,19 @@ export const toggleContainer = style({
   alignItems: 'center',
   justifyContent: 'space-between',
   padding: '0 4px',
+
+  '@media': {
+    '(max-width: 850px)': {
+      width: 83,
+      border: '1px solid #2b2b2b',
+      backgroundColor: '#fff',
+      color: '#2b2b2b',
+    },
+
+    '(max-width: 768px)': {
+      display: 'none',
+    },
+  },
 });
 
 export const toggleSelected = style({
@@ -25,6 +38,12 @@ export const toggleSelected = style({
   borderRadius: 45,
   fontSize: 16,
   fontWeight: 500,
+
+  '@media': {
+    '(max-width: 850px)': {
+      display: 'none',
+    },
+  },
 });
 
 export const toggleUnselected = style({
@@ -39,6 +58,12 @@ export const toggleUnselected = style({
   justifyContent: 'center',
   borderRadius: 45,
   boxSizing: 'border-box',
+
+  '@media': {
+    '(max-width: 850px)': {
+      paddingRight: 0,
+    },
+  },
 });
 
 export const toggleContainerSuspense = style({
@@ -51,6 +76,19 @@ export const toggleContainerSuspense = style({
   alignItems: 'center',
   justifyContent: 'space-between',
   padding: '0 4px',
+
+  '@media': {
+    '(max-width: 850px)': {
+      width: 83,
+      border: '1px solid #ccc',
+      backgroundColor: '#fff',
+      color: '#2b2b2b',
+    },
+
+    '(max-width: 768px)': {
+      display: 'none',
+    },
+  },
 });
 
 export const toggleSelectedSuspense = style({
@@ -65,6 +103,12 @@ export const toggleSelectedSuspense = style({
   borderRadius: 45,
   fontSize: 16,
   fontWeight: 500,
+
+  '@media': {
+    '(max-width: 850px)': {
+      display: 'none',
+    },
+  },
 });
 
 export const toggleSelectedTextSuspense = style({
@@ -84,6 +128,12 @@ export const toggleUnselectedSuspense = style({
   justifyContent: 'center',
   borderRadius: 45,
   boxSizing: 'border-box',
+
+  '@media': {
+    '(max-width: 850px)': {
+      paddingRight: 0,
+    },
+  },
 });
 
 export const toggleUnselectedTextSuspense = style({
