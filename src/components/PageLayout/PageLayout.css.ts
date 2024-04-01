@@ -91,8 +91,19 @@ export const propertiesContainer = style({
 export const paginationContainer = style({
   width: '100%',
   display: 'flex',
-  justifyContent: 'center',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
   alignItems: 'center',
-  height: 100,
-  marginTop: 20,
+  margin: '40px 0px',
+  height: 138,
+});
+
+export const footerAdContainer = style({
+  width: '100%',
+  height: 620,
+  gap: 20,
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+  alignItems: 'center',
 });

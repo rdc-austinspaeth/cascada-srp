@@ -7,4 +7,5 @@ export interface PageLayoutProps {
   Meta: React.FunctionComponent,
   Properties: React.FunctionComponent,
   Pagination: React.FunctionComponent,
+  FooterAd: React.FunctionComponent,
 }

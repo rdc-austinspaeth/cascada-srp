@@ -91,3 +91,34 @@ export const dotsSuspense = style({
   margin: '0px 14px',
   width: 21.22,
 });
+
+export const propertiesFound = style({
+  display: 'flex',
+  justifyContent: 'center',
+  marginTop: 36,
+  color: '#2b2b2b',
+});
+
+export const searchTerm = style({
+  display: 'flex',
+  justifyContent: 'center',
+  marginTop: 14,
+  fontWeight: 500,
+  color: '#2b2b2b',
+});
+
+export const propertiesFoundSuspense = style({
+  marginTop: 40,
+  height: 14,
+  backgroundColor: '#e1e1e1',
+  borderRadius: 4,
+  width: 240,
+});
+
+export const searchTermSuspense = style({
+  marginTop: 20,
+  height: 14,
+  borderRadius: 4,
+  backgroundColor: '#e1e1e1',
+  width: 100,
+});

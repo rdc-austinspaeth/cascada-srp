@@ -11,6 +11,7 @@ import { useStore } from './redux/store';
 import { FilterBar } from './components/FilterBar';
 import { Properties } from './components/Properties';
 import Pagination from './components/Pagination';
+import { FooterAd } from './components/FooterAd';
 
 export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
   const { ssrData = null } = props || {};
@@ -51,7 +52,8 @@ export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
         FilterBar={FilterBar}
         Meta={Meta}
         Properties={Properties}
-        Pagination={Pagination} />
+        Pagination={Pagination}
+        FooterAd={FooterAd} />
     </Provider>
   )
 }
