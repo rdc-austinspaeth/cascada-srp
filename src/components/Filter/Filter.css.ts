@@ -35,7 +35,7 @@ export const filterContainerSuspense = style({
   fontWeight: 500,
   borderRadius: 8,
   backgroundColor: '#fff',
-  border: '1px solid #ccc',
+  border: '1px solid #e1e1e1',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
@@ -52,7 +52,7 @@ export const filterTextSuspense = style({
   height: 14,
   width: '100%',
   borderRadius: 3,
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
 });
 
 export const conditionalTabletHide = style({

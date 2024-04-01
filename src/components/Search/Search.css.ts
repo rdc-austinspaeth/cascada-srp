@@ -22,7 +22,7 @@ export const searchContainerSuspense = style({
   width: 270,
   height: 48,
   borderRadius: 45,
-  border: '1px solid #ccc',
+  border: '1px solid #e1e1e1',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -54,7 +54,7 @@ export const searchInputTextSuspense = style({
   width: 150,
   borderRadius: 4,
   height: 16,
-  background: '#ccc',
+  background: '#e1e1e1',
   position: 'absolute',
 });
 
@@ -73,7 +73,7 @@ export const searchButtonSuspense = style({
   width: 40,
   height: 40,
   borderRadius: 45,
-  background: '#ccc',
+  background: '#e1e1e1',
   right: 4,
   position: 'absolute',
 });

@@ -186,14 +186,14 @@ export const cardContainerSuspense = style({
   width: '100%',
   height: 420,
   borderRadius: 16,
-  border: '1px solid #ccc',
+  border: '1px solid #e1e1e1',
 });
 
 export const labelSuspense = style({
   width: 180,
   height: 12,
   marginBottom: 8,
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
   borderRadius: 4,
 });
 
@@ -202,11 +202,11 @@ export const imageContainerSuspense = style({
   height: 270,
   borderTopLeftRadius: 16,
   borderTopRightRadius: 16,
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
 });
 
 export const statusDotSuspense = style({
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
   height: 12,
   width: 12,
   borderRadius: 45,
@@ -216,7 +216,7 @@ export const statusDotSuspense = style({
 export const statusSuspense = style({
   width: 94,
   height: 14,
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
   borderRadius: 4,
 });
 
@@ -224,7 +224,7 @@ export const priceSuspense = style({
   width: 130,
   height: 24,
   padding: '4px 0',
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
   borderRadius: 4,
   marginTop: 12,
 });
@@ -232,7 +232,7 @@ export const priceSuspense = style({
 export const factSuspense = style({
   width: 40,
   height: 16,
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
   borderRadius: 4,
   marginTop: 8,
 });
@@ -241,7 +241,7 @@ export const factSuspense = style({
 export const addressLineSuspense = style({
   width: 180,
   height: 14,
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
   borderRadius: 4,
   marginTop: 12,
 });
@@ -249,7 +249,7 @@ export const addressLineSuspense = style({
 export const locationLineSuspense = style({
   width: 150,
   height: 14,
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
   borderRadius: 4,
   marginTop: 6,
 });
@@ -257,8 +257,8 @@ export const locationLineSuspense = style({
 export const ctaButtonSuspense = style({
   width: 128.71,
   height: 36,
-  backgroundColor: '#ccc',
-  border: '1px solid #ccc',
+  backgroundColor: '#e1e1e1',
+  border: '1px solid #e1e1e1',
   borderRadius: 45,
   marginBottom: -1,
 });

@@ -13,7 +13,7 @@ export const navigationLinkInnerSuspense = style({
   height: 14,
   width: '100%',
   borderRadius: 3,
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
 });
 
 export const linkText = style({
@@ -45,7 +45,7 @@ export const activeBorder = style({
 export const activeBorderSuspense = style({
   height: 2,
   width: '100%',
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
   position: 'absolute',
   bottom: -1,
   left: 0,

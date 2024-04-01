@@ -80,7 +80,7 @@ export const toggleContainerSuspense = style({
   '@media': {
     '(max-width: 850px)': {
       width: 83,
-      border: '1px solid #ccc',
+      border: '1px solid #e1e1e1',
       backgroundColor: '#fff',
       color: '#2b2b2b',
     },
@@ -98,7 +98,7 @@ export const toggleSelectedSuspense = style({
   alignItems: 'center',
   justifyContent: 'center',
   backgroundColor: '#fff',
-  border: '1px solid #ccc',
+  border: '1px solid #e1e1e1',
   boxSizing: 'border-box',
   borderRadius: 45,
   fontSize: 16,
@@ -115,7 +115,7 @@ export const toggleSelectedTextSuspense = style({
   height: 16,
   width: 28.54,
   borderRadius: 3,
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
 });
 
 export const toggleUnselectedSuspense = style({
@@ -140,5 +140,5 @@ export const toggleUnselectedTextSuspense = style({
   height: 16,
   width: 33.38,
   borderRadius: 3,
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
 });

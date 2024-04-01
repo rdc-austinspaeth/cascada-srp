@@ -11,7 +11,7 @@ export const loginInnerSuspense = style({
   height: 14,
   width: '100%',
   borderRadius: 3,
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
 });
 
 export const loginText = style({

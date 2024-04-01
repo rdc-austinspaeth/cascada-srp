@@ -41,7 +41,7 @@ export const headerLinksContainerSuspense = style({
 
 export const headerLinkSuspense = style({
   height: 16,
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
   marginBottom: -1,
   borderRadius: 4,
 });

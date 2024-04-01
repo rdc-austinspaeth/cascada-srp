@@ -68,7 +68,7 @@ export const pageTitleSuspense = style({
   height: 24,
   width: 500,
   margin: '4px 0px',
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
   borderRadius: 4,
 
   '@media': {
@@ -84,7 +84,7 @@ export const pageTitleSuspense = style({
 export const HomeCountSuspense = style({
   height: 14,
   width: 80,
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
   borderRadius: 4,
   marginRight: 32,
 });
@@ -92,6 +92,6 @@ export const HomeCountSuspense = style({
 export const sortSuspense = style({
   height: 14,
   width: 160,
-  backgroundColor: '#ccc',
+  backgroundColor: '#e1e1e1',
   borderRadius: 4,
 });

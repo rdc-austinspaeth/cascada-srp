@@ -19,6 +19,6 @@ export const signUpButtonSuspense = style({
   height: 36,
   width: 93.02,
   marginTop: -2,
-  background: '#ccc',
+  background: '#e1e1e1',
   borderRadius: 45,
 });

@@ -29,7 +29,7 @@ export const tileListAd = style({
   width: '100%',
   height: 420,
   borderRadius: 16,
-  backgroundColor: '#ccc',
+  border: '1px solid #e1e1e1',
 });
 
 export const label = style({
