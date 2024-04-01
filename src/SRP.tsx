@@ -6,20 +6,20 @@ import { PageLayout } from './components/PageLayout';
 import { BannerAd } from './components/BannerAd';
 import { NavigationBar } from './components/NavigationBar';
 import Meta from './components/Meta';
-import { setLoadStatus } from './redux/actions';
 import { getProperties } from './redux/actions';
-import store from './redux/store';
+import { useStore } from './redux/store';
 import { FilterBar } from './components/FilterBar';
 import { Properties } from './components/Properties';
+import Pagination from './components/Pagination';
 
 export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
-  const { ssrData = {} } = props || {};
-  
-  React.useEffect(() => {
-    setTimeout(() => {
-      store().dispatch(setLoadStatus(true));
-    }, 500);
-  }, []);
+  const { ssrData = null } = props || {};
+
+  const initialReduxState = {
+    ...ssrData,
+  };
+
+  const reduxStore: any = useStore(initialReduxState);
 
   React.useEffect(()=>{
     const variables = {
@@ -40,17 +40,18 @@ export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
       offset: 0,
       sort_type: 'relevant',
     };
-    store().dispatch(getProperties(variables));
+    reduxStore?.dispatch(getProperties(variables));
   },[]);
 
   return (
-    <Provider store={store(ssrData)}>
+    <Provider store={reduxStore}>
       <PageLayout
         BannerAd={BannerAd}
         NavigationBar={NavigationBar}
         FilterBar={FilterBar}
         Meta={Meta}
-        Properties={Properties} />
+        Properties={Properties}
+        Pagination={Pagination} />
     </Provider>
   )
 }

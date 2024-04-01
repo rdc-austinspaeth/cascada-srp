@@ -1,4 +1,4 @@
-import client from '../../apolloClient';
+import client from '../../utils/apolloClient';
 import { PROPERTY_SEARCH_QUERY } from '../../graphql/queries/propertyQuery';
 
 import { setProperties } from './setProperties.action';

@@ -87,3 +87,12 @@ export const propertiesContainer = style({
   padding: '0px 16px',
   marginTop: 4,
 });
+
+export const paginationContainer = style({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  height: 100,
+  marginTop: 20,
+});

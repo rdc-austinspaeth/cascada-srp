@@ -6,4 +6,5 @@ export interface PageLayoutProps {
   FilterBar: React.FunctionComponent,
   Meta: React.FunctionComponent,
   Properties: React.FunctionComponent,
+  Pagination: React.FunctionComponent,
 }

@@ -1,4 +1,4 @@
-import client from "./apolloClient";
+import client from "./utils/apolloClient";
 import { PROPERTY_SEARCH_QUERY } from "./graphql/queries/propertyQuery";
 
 export const getTestData = async () => {
