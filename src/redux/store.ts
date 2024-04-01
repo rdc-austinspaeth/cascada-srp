@@ -6,6 +6,7 @@ import rootReducer from './reducers';
 // @ts-ignore
 export type RootState = ReturnType<any>;
 
-const store = createStore(rootReducer, {}, applyMiddleware(thunk));
+const store = (defaultReducer?: any) => {
+  return createStore(rootReducer, defaultReducer || {}, applyMiddleware(thunk))};
 
 export default store;

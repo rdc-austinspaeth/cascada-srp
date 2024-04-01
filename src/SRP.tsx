@@ -13,11 +13,11 @@ import { FilterBar } from './components/FilterBar';
 import { Properties } from './components/Properties';
 
 export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
-  const { ssrData } = props || {};
+  const { ssrData = {} } = props || {};
   
   React.useEffect(() => {
     setTimeout(() => {
-      store.dispatch(setLoadStatus(true));
+      store().dispatch(setLoadStatus(true));
     }, 500);
   }, []);
 
@@ -40,11 +40,11 @@ export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
       offset: 0,
       sort_type: 'relevant',
     };
-    store.dispatch(getProperties(variables));
+    store().dispatch(getProperties(variables));
   },[]);
 
   return (
-    <Provider store={store}>
+    <Provider store={store(ssrData)}>
       <PageLayout
         BannerAd={BannerAd}
         NavigationBar={NavigationBar}
