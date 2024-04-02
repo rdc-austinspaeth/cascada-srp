@@ -9,4 +9,5 @@ export interface PageLayoutProps {
   Pagination: React.FunctionComponent,
   FooterAd: React.FunctionComponent,
   BuyingHome: React.FunctionComponent,
+  Footer: React.FunctionComponent,
 }

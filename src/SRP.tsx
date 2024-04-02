@@ -12,6 +12,8 @@ import { FilterBar } from './components/FilterBar';
 import { Properties } from './components/Properties';
 import Pagination from './components/Pagination';
 import { FooterAd } from './components/FooterAd';
+import Footer from './components/Footer';
+import BuyingHome from './components/BuyingHome';
 
 export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
   const { ssrData = null } = props || {};
@@ -53,7 +55,9 @@ export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
         Meta={Meta}
         Properties={Properties}
         Pagination={Pagination}
-        FooterAd={FooterAd} />
+        BuyingHome={BuyingHome}
+        FooterAd={FooterAd}
+        Footer={Footer} />
     </Provider>
   )
 }

@@ -1,11 +1,10 @@
 import React from "react";
 
 import { PageLayoutProps } from "./PageLayout.types";
-import { bannerAdContainer, filterBarContainer, metaContainer, navBarContainer, pageLayoutContainer, propertiesContainer, filterBarStickyBorder, paginationContainer, footerAdContainer, buyingHomeContainer } from "./PageLayout.css";
-import BuyingHome from "../BuyingHome";
+import { bannerAdContainer, filterBarContainer, metaContainer, navBarContainer, pageLayoutContainer, propertiesContainer, filterBarStickyBorder, paginationContainer, footerAdContainer, buyingHomeContainer, footerContainer } from "./PageLayout.css";
 
 export const PageLayout: React.FunctionComponent<PageLayoutProps> = (props) => {
-  const { BannerAd, NavigationBar, FilterBar, Meta, Properties, Pagination, FooterAd } = props || {};
+  const { BannerAd, NavigationBar, FilterBar, Meta, Properties, Pagination, FooterAd, BuyingHome, Footer } = props || {};
 
   return (
     <div className={pageLayoutContainer}>
@@ -33,6 +32,9 @@ export const PageLayout: React.FunctionComponent<PageLayoutProps> = (props) => {
       </div>
       <div className={buyingHomeContainer}>
         { <BuyingHome /> }
+      </div>
+      <div className={footerContainer}>
+        { <Footer /> }
       </div>
     </div>
   )

@@ -11,7 +11,7 @@ export function SSRRender(cssAssets: any) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script type="module" src="/assets/index.js" />
-        {cssAssets.map((asset: any) => (
+        { cssAssets.map((asset: any) => (
           <link key={asset} rel="stylesheet" href={asset} />
         ))}
       </head>

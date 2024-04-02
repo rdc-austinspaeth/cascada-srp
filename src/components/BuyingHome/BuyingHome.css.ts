@@ -7,7 +7,8 @@ export const buyingHomeContainer = style({
   width: 'calc(100% - 30px)',
   maxWidth: 1244,
   marginTop: 40,
-  marginBottom: 100,
+  marginBottom: 40,
+  height: 537,
 
   '@media': {
     '(max-width: 768px)': {

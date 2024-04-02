@@ -113,4 +113,10 @@ export const buyingHomeContainer = style({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  height: 616,
+});
+
+export const footerContainer = style({
+  width: '100%',
+  height: 564,
 });
