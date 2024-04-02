@@ -107,3 +107,10 @@ export const footerAdContainer = style({
   justifyContent: 'flex-start',
   alignItems: 'center',
 });
+
+export const buyingHomeContainer = style({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+});
