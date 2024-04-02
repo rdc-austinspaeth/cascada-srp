@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { directionSuspense, dotsSuspense, pageLinkSuspense, pageLinks, paginationBar, propertiesFoundSuspense, searchTermSuspense } from './Pagination.css';
+import { directionSuspense, dotsSuspense, pageLinkSuspense, pageLinks, pagePositionSuspense, paginationBar, propertiesFoundSuspense, searchTermSuspense } from './Pagination.css';
 
 export const PaginationSuspense: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <div className={paginationBar}>
         <div style={{ width: 99 }} className={directionSuspense} />
+        <div className={pagePositionSuspense} />
         <div className={pageLinks}>
           <div className={pageLinkSuspense} />
           <div className={pageLinkSuspense} />

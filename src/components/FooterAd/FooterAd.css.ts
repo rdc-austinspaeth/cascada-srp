@@ -1,7 +1,8 @@
 import { style } from "@vanilla-extract/css";
 
 export const footerAdPlacholder = style({
-  width: 970,
+  width: 'calc(100% - 30px)',
+  maxWidth: 970,
   height: 250,
   backgroundColor: '#e1e1e1',
   borderRadius: 4,

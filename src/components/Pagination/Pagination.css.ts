@@ -34,6 +34,12 @@ export const pageLinks = style({
   justifyContent: 'center',
   gap: 8,
   margin: '0px 21px',
+
+  '@media': {
+    '(max-width: 768px)': {
+      display: 'none',
+    }
+  }
 });
 
 export const pageLink = style({
@@ -54,6 +60,35 @@ export const pageLink = style({
     color: '#696159',
     backgroundColor: '#e9e7e4',
     borderColor: '#696159',
+  }
+});
+
+export const pagePosition = style({
+  display: 'none',
+  fontSize: 14,
+  color: '#2b2b2b',
+  margin: '0px 24px',
+
+  '@media': {
+    '(max-width: 768px)': {
+      display: 'flex',
+    }
+  }
+});
+
+export const pagePositionSuspense = style({
+  width: 80,
+  height: 14,
+  margin: '0px 24px',
+  backgroundColor: '#e1e1e1',
+  borderRadius: 4,
+  display: 'none',
+  marginBottom: -2,
+
+  '@media': {
+    '(max-width: 768px)': {
+      display: 'flex',
+    }
   }
 });
 
