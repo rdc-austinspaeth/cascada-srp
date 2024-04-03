@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { SrpAds, AdsManager, AdsSlotsGroup, AdsUtils } from '@moveinc/rdc-ads-media';
 
@@ -9,8 +9,7 @@ export const Ads = () => {
     "loading": false,
     "status": "idle",
     "data": {}
-};
-const properties: any = [];
+  };
   const filterCriteria = {
     "bath": {},
     "bed": {},
@@ -205,53 +204,9 @@ const properties: any = [];
         "variation": "V1",
         "isEnabled": true
     }
-]
-
-
-  const prevIsMapViewRef = React.useRef<boolean>(isMapView);
-  const prevSortRef = React.useRef<string | undefined>('');
-
-  const sdacSearch = {
-    city: geo?.city || '',
-    full_address: '',
-    postal_code: geo?.postal_code || '',
-    state_code: geo?.state_code || '',
-  };
-
-  const [lb1AdReloadTriggers, setLb1AdReloadTriggers] = useState({
-    currentPage: page,
-    currentFilter: filterCriteria,
-    shouldLb1Reload: false,
-  });
-
-  useEffect(() => {
-    if (isMapView) {
-      prevIsMapViewRef.current = isMapView;
-    }
-  }, [isMapView]);
-
-  useEffect(() => {
-    prevSortRef.current = sort;
-  }, []);
-
-  useEffect(() => {
-    if (page !== lb1AdReloadTriggers.currentPage || JSON.stringify(filterCriteria) !== JSON.stringify(lb1AdReloadTriggers.currentFilter)) {
-      setLb1AdReloadTriggers({
-        ...lb1AdReloadTriggers,
-        currentPage: page,
-        shouldLb1Reload: true,
-      });
-    }
-  }, [page, filterCriteria]);
-
-  // CustomMessageHandler('startScroll', () => {
-  //   if (isSPA) {
-  //     AdsManager.clearPageLevelTargetingKey('refer');
-  //   }
-  // });
+  ];
 
   const loadLB1Ad = () => {
-
     AdsUtils.LoadAds(AdsSlotsGroup.gptadslotsLB1LISTView);
   };
 
@@ -260,81 +215,25 @@ const properties: any = [];
       return;
     }
 
-    const rootMargin = '1px';
-    const options = { rootMargin };
     const containerElement = document.querySelector('#lb1_container_srp');
 
-
-
-    // Early return if containerElement is null or undefined
     if (!containerElement) return;
 
     return loadLB1Ad();
   };
 
-  useEffect(() => {
-    const resetAdsSlotsLoaded = () => {
-      for (const key in AdsSlotsGroup) {
-        if (key && AdsSlotsGroup[key]) {
-          AdsSlotsGroup[key].isLoaded = false;
-        }
-      }
-    };
-    AdsUtils.logMessage('SRP Ads resetAdsSlotsLoaded');
-    resetAdsSlotsLoaded();
-  }, [page, filterCriteria, geo, pageType, isMapView, sort, properties]);
-
-  let adTimeout1 = -1;
-  let adTimeout2 = -1;
-
-  useEffect(() => {
-    // Function to handle LB1 ad loading
+  React.useEffect(() => {
     const handleLB1AdLoading = () => {
-      if (adTimeout2 === -1) {
-        adTimeout2 = window.setTimeout(() => {
-          loadLB1AdInview();
-        }, 1);
-      }
-      prevIsMapViewRef.current = isMapView;
-      prevSortRef.current = sort;
-    };
-
-    const clearAdTimeouts = () => {
-      if (adTimeout2 !== -1) clearTimeout(adTimeout2);
-      adTimeout2 = -1;
-    };
-
-    if (isSPA && !lb1AdReloadTriggers.shouldLb1Reload && !prevIsMapViewRef.current && sort === prevSortRef.current) {
-      return;
+      loadLB1AdInview();
     }
-    handleLB1AdLoading();
-    return clearAdTimeouts;
-  }, [page, filterCriteria, geo, isMapView, pageType, sort, lb1AdReloadTriggers.shouldLb1Reload]);
 
-  useEffect(() => {
     const handlePageLevelTargeting = () => {
-      if (isSPA) {
-        AdsManager.addPageLevelTargeting('refer', 'ldp');
-        if (adTimeout1 === -1) {
-          adTimeout1 = window.setTimeout(() => {
-            AdsManager.clearPageLevelTargetingKey('refer');
-          }, 3000);
-        }
-      } else {
-        AdsManager.clearPageLevelTargetingKey('refer');
-      }
-    };
-
-    // Function to clear timeouts
-    const clearAdTimeouts = () => {
-      if (adTimeout1 !== -1) clearTimeout(adTimeout1);
-      adTimeout1 = -1;
+      AdsManager.clearPageLevelTargetingKey('refer');
     };
 
     handlePageLevelTargeting();
-    return clearAdTimeouts;
-  }, [isSPA]);
-
+    handleLB1AdLoading();
+  }, []);
 
   return (
     <>
@@ -352,3 +251,5 @@ const properties: any = [];
     </>
   );
 };
+
+export default React.memo(Ads);
