@@ -11,6 +11,9 @@ export const TileAd: React.FunctionComponent<TileAdProps> = (props) => {
     <div className={propertyCardSuspense}>
       <div className={label}>Advertisement</div>
       <div id={id} className={tileListAd}>
+        <div id='ads-srp-tile'>
+          <div id="div-gpt-ad-TILELIST1" />
+        </div>
         <div className={imageContainerSuspense} />
         <div className={cardContentContainer}>
           <div className={leftContent}>

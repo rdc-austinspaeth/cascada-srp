@@ -6,7 +6,9 @@ export const PropertyCardSuspense: React.FunctionComponent<PropertyCardProps> = 
     <div className={propertyCardSuspense}>
       <div className={labelSuspense} />
       <div className={cardContainerSuspense}>
-        <div className={imageContainerSuspense} />
+        <div className={imageContainerSuspense}>
+          <img style={{ objectFit: 'contain', height: '100%', width: '100%' }} src='https://www.svgrepo.com/show/508699/landscape-placeholder.svg' />
+        </div>
         <div className={cardContentContainer}>
           <div className={leftContent}>
             <div className={status}>

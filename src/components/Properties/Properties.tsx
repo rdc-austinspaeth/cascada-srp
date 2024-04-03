@@ -16,7 +16,7 @@ export const Properties: React.FunctionComponent = () => {
   const ads = [
     {
       isAd: true,
-      id: 'ad_container_TILELIST1',
+      id: 'ad-unit-TILELIST1',
       index: 3,
     },
     {
