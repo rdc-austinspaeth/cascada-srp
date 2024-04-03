@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { SrpAds, AdsManager, AdsSlotsGroup, AdsUtils } from '@moveinc/rdc-ads-media';
+import { ads } from '../../constants/ads';
 
 export const Ads = () => {
   const pageType = 'forSale';
@@ -208,6 +209,14 @@ export const Ads = () => {
 
   const loadLB1Ad = () => {
     AdsUtils.LoadAds(AdsSlotsGroup.gptadslotsLB1LISTView);
+    ads.forEach((ad: any) => {
+      console.log('ad', ad);
+      if (ad.adType === 'inline') {
+        AdsUtils.LoadAds(AdsSlotsGroup[`gptadslots${ad.id}`]);
+      } else {
+        AdsUtils.LoadAds(AdsSlotsGroup[`gptadslots${ad.id}View`]);
+      }
+    });
   };
 
   const loadLB1AdInview = () => {
@@ -218,7 +227,7 @@ export const Ads = () => {
     const containerElement = document.querySelector('#lb1_container_srp');
 
     if (!containerElement) return;
-
+    loadLB1Ad();
     return loadLB1Ad();
   };
 

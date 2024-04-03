@@ -45,6 +45,7 @@ export const Scripts = () => {
     'https://pixel.everesttech.net/rlsa/5154',
     'https://s.yimg.com/wi/ytc.js',
   ];
+  
   React.useEffect(() => {
     highPriorityScriptSources.forEach((src) => {
       const script = document.createElement('script');

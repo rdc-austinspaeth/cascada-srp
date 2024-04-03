@@ -6,7 +6,9 @@ export const InlineAd: React.FunctionComponent<inlineAdProps> = (props) => {
 
   return (
     <div className={inlineAdContainer}>
-      <div id={id} className={ inlineAdPlacholder } />
+      <div id={`ad_container_${id}`} className={ inlineAdPlacholder }>
+        <div id={`div-gpt-ad-${id}`} />
+      </div>
     </div>
   )
 }
