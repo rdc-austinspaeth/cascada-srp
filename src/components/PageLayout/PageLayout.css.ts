@@ -114,9 +114,21 @@ export const buyingHomeContainer = style({
   justifyContent: 'center',
   alignItems: 'center',
   height: 616,
+
+  '@media': {
+    '(max-width: 768px)': {
+      display: 'none',
+    },
+  },
 });
 
 export const footerContainer = style({
   width: '100%',
-  height: 564,
+  height: 468,
+
+  '@media': {
+    '(max-width: 768px)': {
+      marginTop: 40,
+    },
+  },
 });
