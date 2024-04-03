@@ -10,14 +10,9 @@ export const TileAd: React.FunctionComponent<TileAdProps> = (props) => {
   return (
     <div className={propertyCardSuspense}>
       <div className={label}>Advertisement</div>
-      <div id={id} className={tileListAd}>
-        <div className={imageContainerSuspense} />
-        <div className={cardContentContainer}>
-          <div className={leftContent}>
-            <div style={{ width: 300 }} className={priceSuspense} />
-            <div className={addressLineSuspense} />
-            <div className={locationLineSuspense} />
-          </div>
+      <div style={{ height: '100%' }} id={`ad-unit-${id}`} className={tileListAd}>
+        <div style={{ height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }} className='ads-srp-tile'>
+          <div className='ads ' id={`div-gpt-ad-${id}`} />
         </div>
       </div>
     </div>

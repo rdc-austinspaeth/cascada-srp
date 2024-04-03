@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 
 export const tileListContainer = style({
   height: 440,
@@ -28,9 +28,21 @@ export const tileListContainer = style({
 export const tileListAd = style({
   width: '100%',
   height: 420,
+  overflow: 'hidden',
   borderRadius: 16,
   border: '1px solid #e1e1e1',
 });
+
+globalStyle('.fluid_tile_ad > div > div', {
+  height: '100%!important',
+  width: '100%!important',
+});
+
+
+
+globalStyle('.fluid_tile_ad iframe', {
+  height: '100%!important',
+})
 
 export const label = style({
   width: '100%',

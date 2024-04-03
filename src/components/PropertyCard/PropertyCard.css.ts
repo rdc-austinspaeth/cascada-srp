@@ -32,6 +32,22 @@ export const cardContainer = style({
   boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.16)',
 });
 
+export const cardContainerPlaceholder = style({
+  width: 'calc(100% - 10px)',
+  height: 420,
+  borderRadius: 16,
+  overflow: 'hidden',
+
+  '@media': {
+    '(max-width: 1100px)': {
+      width: 'calc(100% - 16px)',
+    },
+    '(max-width: 800px)': {
+      width: 'calc(100% - 32px)',
+    },
+  },
+});
+
 export const label = style({
   width: '100%',
   height: 20,
@@ -202,6 +218,7 @@ export const imageContainerSuspense = style({
   height: 270,
   borderTopLeftRadius: 16,
   borderTopRightRadius: 16,
+  overflow: 'hidden',
   backgroundColor: '#e1e1e1',
 });
 
