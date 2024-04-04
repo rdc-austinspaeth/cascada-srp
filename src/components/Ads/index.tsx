@@ -210,7 +210,6 @@ export const Ads = () => {
   const loadLB1Ad = () => {
     AdsUtils.LoadAds(AdsSlotsGroup.gptadslotsLB1LISTView);
     ads.forEach((ad: any) => {
-      console.log('ad', ad);
       if (ad.adType === 'inline') {
         AdsUtils.LoadAds(AdsSlotsGroup[`gptadslots${ad.id}`]);
       } else {
