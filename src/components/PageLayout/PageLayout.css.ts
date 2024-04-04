@@ -31,7 +31,7 @@ export const navBarContainer = style({
   justifyContent: 'flex-start',
   alignItems: 'center',
   borderBottom: '1px solid #cacaca',
-  zIndex: 2,
+  zIndex: 3,
 });
 
 export const filterBarStickyBorder = style({
