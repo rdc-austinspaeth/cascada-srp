@@ -7,10 +7,13 @@ export const propertyCardContainer = style({
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
   marginBottom: 8,
-  width: 'calc(25% - 6px)',
+  width: 'calc(16.67% - 7px)',
 
   '@media': {
-    '(max-width: 1700px)': {
+    '(max-width: 2200px)': {
+      width: 'calc(20% - 7px)',
+    },
+    '(max-width: 1900px)': {
       width: 'calc(25% - 6px)',
     },
     '(max-width: 1400px)': {
@@ -54,6 +57,9 @@ export const label = style({
   color: '#757575',
   fontSize: 12,
   fontWeight: 400,
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
 });
 
 export const imageContainer = style({
@@ -149,9 +155,16 @@ export const fact = style({});
 
 export const addressLine = style({
   marginTop: 4,
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
 });
 
-export const locationLine = style({});
+export const locationLine = style({
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+});
 
 export const rightContent = style({
   display: 'flex',
@@ -180,10 +193,13 @@ export const propertyCardSuspense = style({
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
   marginBottom: 8,
-  width: 'calc(25% - 6px)',
+  width: 'calc(16.67% - 7px)',
 
   '@media': {
-    '(max-width: 1700px)': {
+    '(max-width: 2200px)': {
+      width: 'calc(20% - 7px)',
+    },
+    '(max-width: 1900px)': {
       width: 'calc(25% - 6px)',
     },
     '(max-width: 1400px)': {

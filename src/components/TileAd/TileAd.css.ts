@@ -7,10 +7,13 @@ export const tileListContainer = style({
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
   marginBottom: 8,
-  width: 'calc(20% - 6px)',
+  width: 'calc(16.67% - 7px)',
 
   '@media': {
-    '(max-width: 1800px)': {
+    '(max-width: 2200px)': {
+      width: 'calc(20% - 7px)',
+    },
+    '(max-width: 1900px)': {
       width: 'calc(25% - 6px)',
     },
     '(max-width: 1500px)': {
@@ -37,8 +40,6 @@ globalStyle('.fluid_tile_ad > div > div', {
   height: '100%!important',
   width: '100%!important',
 });
-
-
 
 globalStyle('.fluid_tile_ad iframe', {
   height: '100%!important',
