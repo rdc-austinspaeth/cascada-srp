@@ -38,6 +38,9 @@ export const label = style({
   color: '#757575',
   fontSize: 12,
   fontWeight: 400,
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
 });
 
 export const imageContainer = style({
