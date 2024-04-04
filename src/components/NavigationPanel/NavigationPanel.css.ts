@@ -33,8 +33,11 @@ export const headline = style({
 
 export const link = style({
   fontSize: 14,
+  textAlign: 'left',
   fontWeight: 400,
   color: '#2b2b2b',
+  boxSizing: 'border-box',
+  paddingRight: 12,
   textDecoration: 'none',
 
   ':hover': {

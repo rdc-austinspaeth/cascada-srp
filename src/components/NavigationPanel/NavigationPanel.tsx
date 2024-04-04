@@ -5,7 +5,7 @@ import { NavigationPanelProps } from "./NavigationPanel.types";
 export const NavigationPanel: React.FunctionComponent<NavigationPanelProps> = (props) => {
   const { panelType } = props || {};
 
-  if (panelType !== 'Buy' && panelType !== 'Sell') return;
+  if (panelType === 'My Home') return;
   
   return (
     <section className={panelContainer}>
