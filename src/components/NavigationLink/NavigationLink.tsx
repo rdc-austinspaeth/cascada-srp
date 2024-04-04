@@ -1,14 +1,17 @@
+import { NavigationPanel } from "../NavigationPanel";
+
 import { activeBorder, linkText, navigationLinkContainer } from "./NavigationLink.css";
 import { NavigationLinkProps } from "./NavigationLink.types";
 
 export const NavigationLink: React.FunctionComponent<NavigationLinkProps> = (props) => {
-  const { text, active } = props || {};
+  const { text, active, width } = props || {};
 
   return (
-    <div className={navigationLinkContainer}>
+    <button className={navigationLinkContainer}>
       <div dangerouslySetInnerHTML={{ __html: text }} className={linkText} />
-      <div className={activeBorder} style={{ backgroundColor: active ? '#2b2b2b' : 'transparent' }} />
-    </div>
+      <div className={activeBorder} style={{ width: width + 15, backgroundColor: active ? '#2b2b2b' : 'transparent' }} />
+      <NavigationPanel panelType={text} />
+    </button>
   )
 }
 

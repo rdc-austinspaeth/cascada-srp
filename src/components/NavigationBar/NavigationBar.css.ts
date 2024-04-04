@@ -7,6 +7,7 @@ export const navigationBar = style({
   justifyContent: 'space-between',
   alignItems: 'center',
   marginTop: 1,
+  zIndex: 3,
 });
 
 export const leftContent = style({

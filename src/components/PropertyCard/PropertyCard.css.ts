@@ -78,6 +78,21 @@ export const image = style({
   objectFit: 'cover',
   width: '100%',
   height: '100%',
+  transition: 'all .4s ease-in-out',
+
+  ':hover': {
+    opacity: 0,
+  },
+
+  ':focus': {
+    opacity: 0,
+  },
+});
+
+export const backroundImage = style({
+  objectFit: 'cover',
+  width: '100%',
+  height: '100%',
 });
 
 export const loveIt = style({
