@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
 
+// @ts-ignore
+import RDCTracking from '@moveinc/rdc-tracking';
+
 import './assets/index.css';
 import { PageLayout } from './components/PageLayout';
 import { BannerAd } from './components/BannerAd';
@@ -25,6 +28,10 @@ export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
   };
 
   const reduxStore: any = useStore(initialReduxState);
+
+  React.useEffect(() => {
+    RDCTracking.trackPage('new_srp', { pageType: 'new' });
+  }, []);
 
   React.useEffect(()=>{
     const variables = {
