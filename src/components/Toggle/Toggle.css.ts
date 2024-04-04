@@ -38,6 +38,17 @@ export const toggleSelected = style({
   borderRadius: 45,
   fontSize: 16,
   fontWeight: 500,
+  cursor: 'pointer',
+
+  ':hover': {
+    color: '#696159',
+    borderColor: '#696159',
+  },
+
+  ':focus': {
+    color: '#696159',
+    borderColor: '#696159',
+  },
 
   '@media': {
     '(max-width: 850px)': {
@@ -58,6 +69,15 @@ export const toggleUnselected = style({
   justifyContent: 'center',
   borderRadius: 45,
   boxSizing: 'border-box',
+  cursor: 'pointer',
+
+  ':hover': {
+    backgroundColor: '#e9e7e4',
+  },
+
+  ':focus': {
+    backgroundColor: '#e9e7e4',
+  },
 
   '@media': {
     '(max-width: 850px)': {

@@ -67,6 +67,15 @@ export const searchButton = style({
   outline: 0,
   border: 'none',
   position: 'absolute',
+  cursor: 'pointer',
+
+  ':hover': {
+    backgroundColor: '#696159',
+  },
+
+  ':focus': {
+    backgroundColor: '#696159',
+  },
 });
 
 export const searchButtonSuspense = style({
