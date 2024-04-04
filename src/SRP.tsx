@@ -14,6 +14,8 @@ import Pagination from './components/Pagination';
 import { FooterAd } from './components/FooterAd';
 import Footer from './components/Footer';
 import BuyingHome from './components/BuyingHome';
+import { Ads } from './components/Ads';
+import Scripts from './components/Scripts';
 
 export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
   const { ssrData = null } = props || {};
@@ -58,6 +60,8 @@ export const SRP: React.FunctionComponent <{ssrData: any}> = (props) => {
         BuyingHome={BuyingHome}
         FooterAd={FooterAd}
         Footer={Footer} />
+     <Scripts />
+     { typeof window !== 'undefined' && <Ads /> }
     </Provider>
   )
 }

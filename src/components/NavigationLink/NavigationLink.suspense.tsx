@@ -7,7 +7,7 @@ export const NavigationLinkSuspense: React.FunctionComponent<NavigationLinkProps
   return (
     <div className={navigationLinkSuspense} style={{ width: width }}>
       <div className={navigationLinkInnerSuspense} />
-      <div className={activeBorderSuspense} style={{ backgroundColor: active ? '#e1e1e1' : 'transparent' }} />
+      <div className={activeBorderSuspense} style={{ width: width + 15, backgroundColor: active ? '#e1e1e1' : 'transparent' }} />
     </div>
   )
 }

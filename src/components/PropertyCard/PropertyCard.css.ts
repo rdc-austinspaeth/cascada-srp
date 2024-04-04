@@ -7,10 +7,13 @@ export const propertyCardContainer = style({
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
   marginBottom: 8,
-  width: 'calc(25% - 6px)',
+  width: 'calc(16.67% - 7px)',
 
   '@media': {
-    '(max-width: 1700px)': {
+    '(max-width: 2200px)': {
+      width: 'calc(20% - 7px)',
+    },
+    '(max-width: 1900px)': {
       width: 'calc(25% - 6px)',
     },
     '(max-width: 1400px)': {
@@ -25,6 +28,38 @@ export const propertyCardContainer = style({
   },
 });
 
+export const propertyCardContainerPlaceholder = style({
+  height: 440,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  justifyContent: 'flex-start',
+  marginBottom: 8,
+  paddingRight: 8,
+  boxSizing: 'border-box',
+  width: 'calc(16.67% - 7px)',
+
+  '@media': {
+    '(max-width: 2200px)': {
+      width: 'calc(20% - 7px)',
+    },
+    '(max-width: 1900px)': {
+      width: 'calc(25% - 6px)',
+    },
+    '(max-width: 1400px)': {
+      width: 'calc(33% - 2px)',
+    },
+    '(max-width: 1100px)': {
+      width: 'calc(50% - 4px)',
+      paddingRight: 16,
+    },
+    '(max-width: 800px)': {
+      width: 'calc(100% - 30px)',
+      paddingRight: 0,
+    },
+  },
+});
+
 export const cardContainer = style({
   width: '100%',
   height: 420,
@@ -32,8 +67,24 @@ export const cardContainer = style({
   boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.16)',
 });
 
+export const cardContainerPlaceholder = style({
+  width: 'calc(100% - 10px)',
+  height: 420,
+  borderRadius: 16,
+  overflow: 'hidden',
+
+  '@media': {
+    '(max-width: 1100px)': {
+      width: 'calc(100% - 16px)',
+    },
+    '(max-width: 800px)': {
+      width: 'calc(100%)',
+    },
+  },
+});
+
 export const label = style({
-  width: '100%',
+  width: 'calc(100% - 30px)',
   height: 20,
   color: '#757575',
   fontSize: 12,
@@ -56,6 +107,21 @@ export const imageContainer = style({
 });
 
 export const image = style({
+  objectFit: 'cover',
+  width: '100%',
+  height: '100%',
+  transition: 'all .3s ease-in-out',
+
+  ':hover': {
+    opacity: 0,
+  },
+
+  ':focus': {
+    opacity: 0,
+  },
+});
+
+export const backroundImage = style({
   objectFit: 'cover',
   width: '100%',
   height: '100%',
@@ -92,6 +158,7 @@ export const leftContent = style({
   flexDirection: 'column',
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
+  width: 'calc(100% - 120px)',
 });
 
 export const status = style({
@@ -136,9 +203,18 @@ export const fact = style({});
 
 export const addressLine = style({
   marginTop: 4,
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  width: '100%',
 });
 
-export const locationLine = style({});
+export const locationLine = style({
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  width: '100%',
+});
 
 export const rightContent = style({
   display: 'flex',
@@ -167,10 +243,13 @@ export const propertyCardSuspense = style({
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
   marginBottom: 8,
-  width: 'calc(25% - 6px)',
+  width: 'calc(16.67% - 7px)',
 
   '@media': {
-    '(max-width: 1700px)': {
+    '(max-width: 2200px)': {
+      width: 'calc(20% - 7px)',
+    },
+    '(max-width: 1900px)': {
       width: 'calc(25% - 6px)',
     },
     '(max-width: 1400px)': {
@@ -205,6 +284,7 @@ export const imageContainerSuspense = style({
   height: 270,
   borderTopLeftRadius: 16,
   borderTopRightRadius: 16,
+  overflow: 'hidden',
   backgroundColor: '#e1e1e1',
 });
 

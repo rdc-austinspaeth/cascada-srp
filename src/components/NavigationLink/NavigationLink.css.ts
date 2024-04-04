@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 
 export const navigationLinkSuspense = style({
   padding: '0px 8px',
@@ -34,9 +34,10 @@ export const activeBorder = style({
   width: '100%',
   backgroundColor: '#2b2b2b',
   position: 'absolute',
-  bottom: -1,
+  marginTop: 46,
+
   selectors: {
-    'nav div:hover > &': {
+    'nav button:hover > &': {
       backgroundColor: '#2b2b2b !important',
     }
   }
@@ -47,13 +48,18 @@ export const activeBorderSuspense = style({
   width: '100%',
   backgroundColor: '#e1e1e1',
   position: 'absolute',
-  bottom: -1,
-  left: 0,
+  marginTop: 46,
 });
 
 export const navigationLinkContainer = style({
-  position: 'relative',
   height: '100%',
   display: 'flex',
   alignItems: 'center',
+  border: 'none',
+  backgroundColor: 'transparent',
+  padding: 0,
+});
+
+globalStyle(`${navigationLinkContainer}:hover > section, ${navigationLinkContainer}:focus > section`, {
+  display: 'flex',
 });
