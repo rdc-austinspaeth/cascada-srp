@@ -18,6 +18,19 @@ export const filterContainer = style({
   whiteSpace: 'nowrap',
   marginLeft: 4.8,
   position: 'relative',
+  cursor: 'pointer',
+
+  ':hover': {
+    color: '#696159',
+    backgroundColor: '#e9e7e4',
+    borderColor: '#696159',
+  },
+
+  ':focus': {
+    color: '#696159',
+    backgroundColor: '#e9e7e4',
+    borderColor: '#696159',
+  },
 });
 
 export const chevronIcon = style({

@@ -8,6 +8,7 @@ export const propertyCardContainer = style({
   justifyContent: 'flex-start',
   marginBottom: 8,
   width: 'calc(16.67% - 7px)',
+  cursor: 'pointer',
 
   '@media': {
     '(max-width: 2200px)': {
@@ -110,7 +111,7 @@ export const image = style({
   objectFit: 'cover',
   width: '100%',
   height: '100%',
-  transition: 'all .3s ease-in-out',
+  transition: 'all .5s ease-in-out',
 
   ':hover': {
     opacity: 0,
@@ -137,6 +138,19 @@ export const loveIt = style({
   boxShadow: 'rgba(0, 0, 0, 0.16) 0px 2px 8px',
   right: 16,
   bottom: 12,
+  cursor: 'pointer',
+
+  ':hover': {
+    borderColor: '#1a1816',
+    fill: '#1a1816!important',
+    backgroundColor: '#e9e7e4',
+  },
+
+  ':focus': {
+    borderColor: '#1a1816',
+    fill: '#1a1816!important',
+    backgroundColor: '#e9e7e4',
+  },
 });
 
 export const heart = style({
@@ -234,6 +248,21 @@ export const ctaButton = style({
   borderRadius: 45,
   fontWeight: 500,
   marginBottom: -1,
+  cursor: 'pointer',
+
+  ':hover': {
+    color: '#696159',
+    borderColor: '#696159',
+    backgroundColor: '#e9e7e4',
+    textDecoration: 'underline',
+  },
+
+  ':focus': {
+    color: '#696159',
+    textDecoration: 'underline',
+    borderColor: '#696159',
+    backgroundColor: '#e9e7e4',
+  }
 });
 
 export const propertyCardSuspense = style({
