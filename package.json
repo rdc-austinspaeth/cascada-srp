@@ -17,7 +17,7 @@
   "dependencies": {
     "@apollo/client": "^3.8.6",
     "@moveinc/rdc-ads-media": "^1.2.78",
-    "@types/events": "^3.0.3",
+    "@moveinc/rdc-tracking": "^1.1.38-beta-38dc84e",
     "@vanilla-extract/css": "^1.14.1",
     "events": "^3.3.0",
     "react": "^18.2.0",
@@ -25,10 +25,10 @@
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.22.3",
     "redux": "^5.0.1",
-    "redux-thunk": "^3.1.0",
-    "vite-plugin-css-injected-by-js": "^3.5.0"
+    "redux-thunk": "^3.1.0"
   },
   "devDependencies": {
+    "@types/events": "^3.0.3",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
@@ -45,6 +45,7 @@
     "serve-static": "^1.15.0",
     "typescript": "^5.2.2",
     "vite": "^5.1.6",
-    "vite-plugin-compression2": "^1.0.0"
+    "vite-plugin-compression2": "^1.0.0",
+    "vite-plugin-css-injected-by-js": "^3.5.0"
   }
 }

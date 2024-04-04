@@ -12,39 +12,39 @@ export const NavigationPanel: React.FunctionComponent<NavigationPanelProps> = (p
       <div className={column}>
         {panelContents[panelType]?.left?.map((element: any) => {
           if (element.elementType === 'headline') {
-            return <h3 className={headline}>{element.text}</h3>
+            return <h3 key={`left-${element.elementType}-${element.text}`} className={headline}>{element.text}</h3>
           }
           if (element.elementType === 'link') {
-            return <a className={link} href="#">{element.text}</a>
+            return <a key={`left-${element.elementType}-${element.text}`} className={link} href="#">{element.text}</a>
           }
           if (element.elementType === 'line') {
-            return <div className={line} />
+            return <div key={`left-${element.elementType}-${panelType}`} className={line} />
           }
         })}
       </div>
       <div className={column}>
-        {panelContents[panelType]?.middle?.map((element: any) => {
+        {panelContents[panelType]?.middle?.map((element: any, index: number) => {
           if (element.elementType === 'headline') {
-            return <h3 className={headline}>{element.text}</h3>
+            return <h3 key={`mid-${element.elementType}-${element.text}`} className={headline}>{element.text}</h3>
           }
           if (element.elementType === 'link') {
-            return <a className={link} href="#">{element.text}</a>
+            return <a key={`mid-${element.elementType}-${element.text}`} className={link} href="#">{element.text}</a>
           }
           if (element.elementType === 'line') {
-            return <div className={line} />
+            return <div key={`mid-${element.elementType}-${panelType}-${index}`} className={line} />
           }
         })}
       </div>
       <div className={column}>
         {panelContents[panelType]?.right?.map((element: any) => {
           if (element.elementType === 'headline') {
-            return <h3 className={headline}>{element.text}</h3>
+            return <h3 key={`right-${element.elementType}-${element.text}`} className={headline}>{element.text}</h3>
           }
           if (element.elementType === 'link') {
-            return <a className={link} href="#">{element.text}</a>
+            return <a key={`right-${element.elementType}-${element.text}`} className={link} href="#">{element.text}</a>
           }
           if (element.elementType === 'line') {
-            return <div className={line} />
+            return <div key={`right-${element.elementType}-${panelType}`} className={line} />
           }
         })}
       </div>
