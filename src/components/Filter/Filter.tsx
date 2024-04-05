@@ -17,26 +17,25 @@ export const Filter: React.FunctionComponent<FilterProps> = (props) => {
   const closedByOutsideClick = useRef(false);
 
   const prices = {
-    minPrices:{
-      '350K':350000,
-      '700K':700000,
+    minPrices: {
+      '350K': 350000,
+      '700K': 700000,
       '1M': 1000000,
       '1.4M': 1400000,
-      '1.8M':1800000,
+      '1.8M': 1800000,
       '2.2M': 2200000,
       '2.4M': 2400000,
     },
-    maxPrices:{
-      '200k':200000,
-      '1.2M':1200000,
+    maxPrices: {
+      '600K': 600000,
+      '1.2M': 1200000,
       '1.8M': 1800000,
       '2.4M': 2400000,
-      '3M':3000000,
+      '3M': 3000000,
       '3.6M': 3600000,
       '4.2M': 4200000,
-    
-    }
-  }
+    },
+  };
 
   const handleButtonClick = (event) => {
     event.stopPropagation();
@@ -126,30 +125,8 @@ export const Filter: React.FunctionComponent<FilterProps> = (props) => {
         <div className={dropdownContent} ref={dropdownRef}>
           <h3>Price</h3>
           <div>
-            <select title="Min price" data-type='minPrice' onChange={handlePriceChange}>
-              <option value="" selected disabled>
-                Min Price
-              </option>
-              {Object.entries(prices.minPrices).map(([key, value]) => {
-                return (
-                  <option key={key} value={value}>
-                    {key}
-                  </option>
-                );
-              })}
-            </select>
-            <select title="Max price" data-type='maxPrice' autoFocus onChange={handlePriceChange}>
-              <option value="" selected disabled>
-                Max Price
-              </option>
-              {Object.entries(prices.maxPrices).map(([key, value]) => {
-                return (
-                  <option key={key} value={value}>
-                    {key}
-                  </option>
-                );
-              })}
-            </select>
+            <PriceSelect title="Min Price" onChange={handlePriceChange} dataType="minPrice" prices={prices.minPrices}/>
+            <PriceSelect title="Max Price" onChange={handlePriceChange} dataType="maxPrice" prices={prices.maxPrices}/>
           </div>
           <div>
             <input
