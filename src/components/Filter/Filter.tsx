@@ -9,6 +9,10 @@ import { chevronIcon, filterContainer, conditionalTabletHide, conditionalMobileH
 export const Filter: React.FunctionComponent<FilterProps> = (props) => {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
+  const [priceFilters, setPriceFilters] = useState({
+    minPrice: 0,
+    maxPrice: 0,
+  });
   const dropdownRef = useRef(null);
   const closedByOutsideClick = useRef(false);
 
@@ -23,7 +27,7 @@ export const Filter: React.FunctionComponent<FilterProps> = (props) => {
       '2.4M': 2400000,
     },
     maxPrices:{
-      '600K':600000,
+      '200k':200000,
       '1.2M':1200000,
       '1.8M': 1800000,
       '2.4M': 2400000,
@@ -46,36 +50,42 @@ export const Filter: React.FunctionComponent<FilterProps> = (props) => {
     }
   }
 
-  const handlePriceFilter = ({minPrice=0, maxPrice=0}) => {
-      const variables = {
-        geoSupportedSlug: '',
-        query: {
-          list_price: {
-            min: 1200000,
-          },
-          primary: true,
-          status: ['for_sale', 'ready_to_build'],
-          search_location: {
-            location: 'California',
-          },
-        },
-        client_data: {
-          device_data: {
-            device_type: 'desktop',
-          },
-        },
-        limit: 42,
-        offset: 0,
-        sort_type: 'relevant',
-      };
-      if (minPrice > 0 || maxPrice > 0) {
-        variables.query.list_price = {
-          ...(minPrice && { min: minPrice }),
-          ...(maxPrice && { max: maxPrice }),
-        };
-      }
-    dispatch(getProperties(variables));
+  const handlePriceChange = (event) => {
+    console.log(event.target.dataset.type);
+    setPriceFilters({
+      ...priceFilters,
+      [event.target?.dataset?.type]: Number(event.target.value)
+    })
   }
+
+  useEffect(()=>{
+    const variables = {
+      geoSupportedSlug: '',
+      query: {
+        primary: true,
+        status: ['for_sale', 'ready_to_build'],
+        search_location: {
+          location: 'South Carolina',
+        },
+      },
+      client_data: {
+        device_data: {
+          device_type: 'desktop',
+        },
+      },
+      limit: 42,
+      offset: 0,
+      sort_type: 'relevant',
+    };
+    const { minPrice, maxPrice } = priceFilters;
+    if (minPrice > 0 || maxPrice > 0) {
+      variables.query.list_price = {
+        ...(minPrice && { min: minPrice }),
+        ...(maxPrice && { max: maxPrice }),
+      };
+    }
+    dispatch(getProperties(variables));
+  },[priceFilters])
 
   useEffect(()=>{
     if(isOpen){
@@ -116,7 +126,7 @@ export const Filter: React.FunctionComponent<FilterProps> = (props) => {
         <div className={dropdownContent} ref={dropdownRef}>
           <h3>Price</h3>
           <div>
-            <select title="Min price">
+            <select title="Min price" data-type='minPrice' onChange={handlePriceChange}>
               <option value="" selected disabled>
                 Min Price
               </option>
@@ -128,7 +138,7 @@ export const Filter: React.FunctionComponent<FilterProps> = (props) => {
                 );
               })}
             </select>
-            <select title="Max price" autoFocus onChange={handlePriceFilter}>
+            <select title="Max price" data-type='maxPrice' autoFocus onChange={handlePriceChange}>
               <option value="" selected disabled>
                 Max Price
               </option>
