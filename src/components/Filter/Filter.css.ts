@@ -70,3 +70,25 @@ export const conditionalMobileHide = style({
     }
   }
 });
+
+export const dropdown = style({
+  position: 'relative',
+  display: 'inline-block',
+});
+
+export const dropdownContent = style({
+  position: 'absolute',
+  display:'flex',
+  padding: 16,
+  backgroundColor: 'rgb(255, 255, 255)',
+  border: '1px solid rgb(114, 106, 96)',
+  borderRadius: 16,
+  boxShadow: 'rgba(0, 0, 0, 0.16) 0px 4px 16px',
+  boxSizing: 'border-box',
+  flexDirection: 'column',
+  WebkitBoxPack: 'justify',
+  justifyContent: 'space-between',
+  overflow: 'hidden',
+  width: 360,
+  zIndex: 1,
+});
