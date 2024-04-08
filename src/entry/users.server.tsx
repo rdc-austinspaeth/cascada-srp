@@ -14,6 +14,8 @@ export function SSRRender(cssAssets: any) {
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
         <link rel="manifest" href="/assets/site.webmanifest" />
+
+        <script async src='https://assets.adobedtm.com/6809d1ba6f0c/c4bef609fe0d/launch-b1aeef4798eb.min.js' />
         
         <title>South Carolina Real Estate &amp; SC Homes for Sale | realtor.com®</title>
         <meta name="description" content="Search SC real estate at realtor.com®. View property details of the 45122 homes for sale in South Carolina." />

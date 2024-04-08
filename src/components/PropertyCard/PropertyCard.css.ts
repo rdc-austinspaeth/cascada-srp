@@ -138,6 +138,9 @@ export const loveIt = style({
   boxShadow: 'rgba(0, 0, 0, 0.16) 0px 2px 8px',
   right: 16,
   bottom: 12,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
   cursor: 'pointer',
 
   ':hover': {
@@ -157,6 +160,7 @@ export const heart = style({
   fill: '#2b2b2b',
   width: 24,
   height: 24,
+  position: 'absolute',
 });
 
 export const cardContentContainer = style({

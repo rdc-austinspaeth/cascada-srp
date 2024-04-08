@@ -87,6 +87,9 @@ export const socialButton = style({
   borderRadius: 45,
   backgroundColor: '#fff',
   border: 'none',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
 });
 
 export const rightContent = style({
@@ -99,6 +102,7 @@ export const socialIcon = style({
   height:24,
   width: 24,
   fill: '#2b2b2b',
+  position: 'absolute',
 });
 
 export const realtorButton = style({

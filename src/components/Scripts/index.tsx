@@ -2,7 +2,6 @@ import React from 'react';
 
 export const Scripts = () => {
   const highPriorityScriptSources = [
-    'https://assets.adobedtm.com/6809d1ba6f0c/c4bef609fe0d/launch-b1aeef4798eb.min.js',
     'https://securepubads.g.doubleclick.net/tag/js/gpt.js',
     'https://pbcs.realtor.com/p/realtor/realtor/pb.js',
     'https://c.amazon-adsystem.com/aax2/apstag.js',
