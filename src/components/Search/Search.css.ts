@@ -66,6 +66,9 @@ export const searchButton = style({
   right: 4,
   outline: 0,
   border: 'none',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
   position: 'absolute',
   cursor: 'pointer',
 
@@ -89,8 +92,9 @@ export const searchButtonSuspense = style({
 
 export const searchIcon = style({
   fill: '#fff',
-  height: 24,
-  width: 24,
+  height: '24px',
+  width: '24px',
+  position: 'absolute',
 });
 
 export const clearIcon = style({
