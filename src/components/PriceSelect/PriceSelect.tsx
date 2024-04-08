@@ -1,5 +1,10 @@
 export const PriceSelect = ({ title, onChange, dataType, prices }) => (
-  <select title={title} autoFocus onChange={onChange} data-type={dataType}>
+  <select
+    title={title}
+    autoFocus
+    onChange={onChange}
+    data-type={dataType}
+  >
     <option value="" selected disabled>
       {title}
     </option>
