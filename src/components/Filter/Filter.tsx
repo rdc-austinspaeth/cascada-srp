@@ -15,7 +15,6 @@ export const Filter: React.FunctionComponent<FilterProps> = (props) => {
   });
   const dropdownRef = useRef(null);
   const closedByOutsideClick = useRef(false);
-
   const prices = {
     minPrices: {
       '350K': 350000,
@@ -37,9 +36,12 @@ export const Filter: React.FunctionComponent<FilterProps> = (props) => {
     },
   };
 
-  const handleButtonClick = (event) => {
-    event.stopPropagation();
-      return setIsOpen(prevState => !prevState);
+  const handleButtonClick = () => {
+    if(closedByOutsideClick.current){
+      closedByOutsideClick.current = false;
+    } else {
+      setIsOpen(prevState => !prevState);
+    }
   }
 
   const handleClickOutside = (event) => {
@@ -50,7 +52,6 @@ export const Filter: React.FunctionComponent<FilterProps> = (props) => {
   }
 
   const handlePriceChange = (event) => {
-    console.log(event.target.dataset.type);
     setPriceFilters({
       ...priceFilters,
       [event.target?.dataset?.type]: Number(event.target.value)
@@ -121,7 +122,7 @@ export const Filter: React.FunctionComponent<FilterProps> = (props) => {
           </svg>
         )}
       </button>
-      {isOpen && (
+      {isOpen &&  label === "Price" && (
         <div className={dropdownContent} ref={dropdownRef}>
           <h3>Price</h3>
           <div>
