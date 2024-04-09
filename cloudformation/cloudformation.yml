@@ -1,0 +1,102 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudFormation template for S3 website with CloudFront distribution and CI Upload Role 
+
+Parameters:
+  BucketName: 
+    Type: String
+    Description: Name of the S3 bucket for the website
+  CloudFrontUrl:
+    Type: String
+    Description: Desired URL for your CloudFront distribution (e.g., 'mywebsite.cloudfront.net')
+  ACM_Certificate:
+    Type: String
+    Description: ARN of the ACM certificate for the CloudFront distribution
+  CI_ARN:
+    Type: String
+    Description: ARN of the CI service (e.g., CodeBuild, CodePipeline) that will upload assets to the S3 bucket
+Resources:
+  # S3 Bucket 
+  WebsiteBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: PublicRead
+      BucketName: !Ref BucketName 
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: error.html
+
+  # Origin Access Identity (OAI) 
+  OriginAccessIdentity:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: 'OAI for website bucket'
+
+  # CloudFront Distribution
+  WebsiteDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Origins:
+          - DomainName: !Join ['', [!Ref BucketName, '.s3.amazonaws.com']]  
+            Id: 'S3-Website'
+            S3OriginConfig:
+              OriginAccessIdentity: !Join ['', ['origin-access-identity/cloudfront/', !Ref OriginAccessIdentity]]
+        Enabled: true
+        DefaultCacheBehavior:
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS 
+          TargetOriginId: 'S3-Website'
+          ForwardedValues:
+            QueryString: false
+            Cookies: 
+              Forward: none 
+          ViewerProtocolPolicy: allow-all
+        DefaultRootObject: index.html
+        CustomErrorResponses: 
+          - ErrorCode: 403
+            ResponseCode: 200 
+            ResponsePagePath: /error.html 
+          - ErrorCode: 404
+            ResponseCode: 200
+            ResponsePagePath: /error.html
+        PriceClass: PriceClass_100 
+        ViewerCertificate: 
+          AcmCertificateArn: !Ref ACM_Certificate 
+          SslSupportMethod: sni-only
+          MinimumProtocolVersion: TLSv1.2_2021 
+
+  # Role for CI Asset Uploads
+  CIUploadRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: 
+              Service: !Ref CI_ARN 
+            Action: sts:AssumeRole
+      Path: /
+      Policies:
+        - PolicyName: S3UploadAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: 
+                  - s3:ListBucket
+                  - s3:PutObject* 
+                Resource: 
+                  - !Join ['', ['arn:aws:s3:::', !Ref WebsiteBucket, '/*']]
+
+Outputs:
+  WebsiteURL:
+    Description: URL of your website
+    Value: !Join ['', ['http://', !Ref CloudFrontUrl]] 
+  CIUploadRoleArn:
+    Description: ARN of the role for CI uploads
+    Value: !GetAtt CIUploadRole.Arn
+

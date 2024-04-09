@@ -1,0 +1,18 @@
+[
+  {
+    "ParameterKey": "BucketName",
+    "ParameterValue": "vite-srp-demo"
+  },
+  {
+    "ParameterKey": "CloudFrontUrl",
+    "ParameterValue": "vite-srp-demo.cloudfront.net"
+  },
+  {
+    "ParameterKey": "ACM_Certificate",
+    "ParameterValue": ""
+  },
+  {
+    "ParameterKey": "CI_ARN",
+    "ParameterValue": ""
+  }
+]
